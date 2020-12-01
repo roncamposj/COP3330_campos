@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
-import static java.lang.System.exit;
-
 public class ContactApp extends App{
 
 
     private final ContactList contact;
-    private static Scanner input = new Scanner(System.in);
-    private static Scanner intput = new Scanner(System.in);
+    private static Scanner contactInput = new Scanner(System.in);
+    private static Scanner contactNum = new Scanner(System.in);
 
     public ContactApp() {
         contact = new ContactList();
@@ -94,9 +92,8 @@ public class ContactApp extends App{
                     "4) remove an item\n" +
                     "5) save the current list\n" +
                     "6) quit to the main menu");
-            menu = intput.nextInt();
+            menu = contactNum.nextInt();
 
-        } while (menu != 6);
 
         switch (menu) {
             case 1:
@@ -123,27 +120,29 @@ public class ContactApp extends App{
             default:
                 System.out.println("Choices are only between 1-6");
         }
+
+        } while (menu != 6);
     }
 
 
     public String getFirstName() {
         System.out.println("Enter first name:");
-        return input.nextLine();
+        return contactInput.nextLine();
     }
 
     public String getLastName() {
         System.out.println("Enter last name:");
-        return input.nextLine();
+        return contactInput.nextLine();
     }
 
     public String getPhone() {
         System.out.println("Enter 10 digit phone number:");
-        return input.nextLine();
+        return contactInput.nextLine();
     }
 
     public String getEmail() {
         System.out.println("Enter email:");
-        return input.nextLine();
+        return contactInput.nextLine();
     }
 
 

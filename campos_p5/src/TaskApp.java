@@ -6,8 +6,8 @@ import static java.lang.System.exit;
 public class TaskApp extends App{
 
     private final TaskList task;
-    private static Scanner input = new Scanner(System.in);
-    private static Scanner intput = new Scanner(System.in);
+    private static Scanner taskInput = new Scanner(System.in);
+    private static Scanner taskNumber = new Scanner(System.in);
 
 
     public TaskApp() {
@@ -116,7 +116,7 @@ public class TaskApp extends App{
                     "1) create a new list\n" +
                     "2) load an existing list\n" +
                     "3) quit");
-            menu = intput.nextInt();
+            menu = taskNumber.nextInt();
 
             switch (menu){
                 case 1: nextOption();
@@ -152,7 +152,7 @@ public class TaskApp extends App{
                     "7) save the current list\n" +
                     "8) quit to the main menu");
 
-            choice = intput.nextInt();
+            choice = taskNumber.nextInt();
             switch (choice){
                 case 1:
                     viewTheList();
@@ -190,17 +190,17 @@ public class TaskApp extends App{
 
     public String getTitle() {
         System.out.println("Enter the task title:");
-        return input.nextLine();
+        return taskInput.nextLine();
     }
 
     public String getDescription() {
         System.out.println("Enter the description:");
-        return input.nextLine();
+        return taskInput.nextLine();
     }
 
     public String getDueDate() {
         System.out.println("Enter the date in YYYY-MM-DD format:");
-        return input.nextLine();
+        return taskInput.nextLine();
     }
 
 
